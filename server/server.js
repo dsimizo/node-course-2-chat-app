@@ -24,7 +24,7 @@ io.on('connection', (socket) => {
     console.log('createMessage', message);
     // Envia para todos que estão conectados
     io.emit('newMessage', generateMessage(message.from, message.text));
-    callback('This is from the server.');
+    callback(); // para avisar quem mandou que a mesagem chegou
   });
 
   socket.on('createLocationMessage', (coords) => {
